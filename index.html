@@ -6,105 +6,103 @@
     <title>Homework #4: Code Quiz</title>
 
     <link rel="stylesheet" href="./style.css">
-    <link rel="script" href="./script.js">
 </head>
 
 <body>
-    <!--Welcome Message-->
-    <h1>Can You Code?</h1>
-
-    <div class="button">
-        <button id="enter">Find Out</button>
-    </div>
-
-    <!--Instructions-->
-    <div class="instructions">
-        <div class="instruct-title">Things to Know Before You Start</div>
-        <div class="instruct-list">
-            <ol>
-                <li>You will have <strong>2 minutes</strong> to complete go through <strong>10 questions</strong></li>
-                <li>The timer will start immediately after you click "Start"</li>
-                <li>Once you select an answer, you won't be able to go back and change it</li>
-                <li>You will get <strong>1 point</strong> for each correct answer</li>
-                <li>Your total score will be displayed at the end</li>
-            </ol>
+    <div class="container">
+        <div id="home" class="flex-column flex-center">
+            <h1>Can You Code?</h1>
+            <a href="/game.html" class="btn">Find Out</a>
         </div>
     </div>
-    
-    <div class="button">
-        <button id="start">Start</button>
-        <button id="exit">Exit</button>
+
+
+
+
+
+
+
+
+
+
+<!--
+        <div class="instructions">
+            <div class="instruct-title">Things to Know Before You Start</div>
+            <div class="instruct-list">
+                <ol>
+                    <li>You will have <strong>2 minutes</strong> to complete <strong>10 questions.</strong></li>
+                    <li>The timer will start immediately after you click "Start".</li>
+                    <li>Once you select an answer, you won't be able to go back and change it.</li>
+                    <li>You will get <strong>1 point</strong> for each correct answer.</li>
+                    <li>Your total score will be displayed at the end</li>
+                </ol>
+            </div>
+        </div>
+
+
+        Quiz Questions
+        <div class="quiz">
+            <div id="q1 question">1. What does HTML stand for?</div>
+            <div id="q1 answer correct">Hyper Text Markup Language</div>
+            <div id="q1 answer">How To Make Lasagna</div>
+            <div id="q1 answer">Hyper Tool Multiple Language</div>
+            
+            <div id="q2 question">2. What does CSS stand for?</div>
+            <div id="q2 answer">Central Support System</div>
+            <div id="q2 answer correct">Cascading Style Sheets</div>
+            <div id="q2 answer">Colorful Style Symbols</div>
+
+            <div id="q3 question">3. How would you call a class is css?</div>
+            <div id="q3 answer">"$"</div>
+            <div id="q3 answer">"#"</div>
+            <div id="q3 answer correct">"."</div>
+
+            <div id="q4 question">4. How would you call an id is css?</div>
+            <div id="q4 answer">"$"</div>
+            <div id="q4 answer correct">"#"</div>
+            <div id="q4 answer">"."</div>
+
+            <div id="q5 question">5. What is GitHub?</div>
+            <div id="q5 answer correct">A version control</div>
+            <div id="q5 answer">A food delivery service</div>
+            <div id="q5 answer">A place where coders hang out</div>
+
+            <div id="q6 question">6. How would you get a new tab to open when a link is clicked using HTML?</div>
+            <div id="q6 answer"><code>console.log(blank)</code></div>
+            <div id="q6 answer correct"><code>target="blank"</code></div>
+            <div id="q6 answer">You don't do anything because HTML has that as default</div>
+
+            <div id="q7 question">7. What Git command would you use to download the freshest version of a repo?</div>
+            <div id="q7 answer correct">git pull</div>
+            <div id="q7 answer">git clone</div>
+            <div id="q7 answer">git add</div>
+
+            <div id="q8 question">8. Serif fonts _____.</div>
+            <div id="q8 answer">do not include small lines attached to the end strokes of letters</div>
+            <div id="q8 answer correct">include small lines attached to the end strokes of letters</div>
+            <div id="q8 answer">a common cursive font used by developers</div>
+
+            <div id="q9 question">9. Given this array of <code>var dogBreed = ["corgi", "pomeranians", "yorkie", "husky"]</code>, how would you print "corgi" to the console?</div>
+            <div id="q9 answer"><code>console.log(dogBreed[1])</code></div>
+            <div id="q9 answer correct"><code>console.log(dogBreed[0])</code></div>
+            <div id="q9 answer"><code>console.log(dogBreed[1,1]</code></div>
+
+            <div id="q10 question">10. What is the first thing you should do in your index.html file?</div>
+            <div id="q10 answer">Insert your name and date</div>
+            <div id="q10 answer">Link any external style sheets or scripts</div>
+            <div id="q10 answer correct">DOCTYPE declaration</div>
+        </div>
+
+        Result
+        <div>
+            <h1>Result</h1>
+            <div class="result">You're done! You answered # out of 10 questions right.</div>
+                <div id="result0">You are not a coder.</div>
+                <div id="result3">Not sure, maybe luck was on your side.</div>
+                <div id="result7">Ok, I guess you can code.</div>
+                <div id="result10">You are definitely a coder!</div>
+        </div>
     </div>
-
-    <!--Countdown timer for quiz-->
-    <div class="timer">
-        <div id="timeLeft">Time Left</div>
-        <div id="minutes">2</div> :
-        <div id="seconds">00</div>
-    </div>
-
-    <!--Quiz Questions-->
-    <div class="quiz">
-        <div id="q1 question">What does HTML stand for?</div>
-        <div id="q1 answer correct">Hyper Text Markup Language</div>
-        <div id="q1 answer">How To Make Lasagna</div>
-        <div id="q1 answer">Hyper Tool Multiple Language</div>
-        
-        <div id="q2 question">What does CSS stand for?</div>
-        <div id="q2 answer">Central Support System</div>
-        <div id="q2 answer correct">Cascading Style Sheets</div>
-        <div id="q2 answer">Colorful Style Symbols</div>
-
-        <div id="q3 question">How would you call a class is css?</div>
-        <div id="q3 answer">"$"</div>
-        <div id="q3 answer">"#"</div>
-        <div id="q3 answer correct">"."</div>
-
-        <div id="q4 question">How would you call an id is css?</div>
-        <div id="q4 answer">"$"</div>
-        <div id="q4 answer correct">"#"</div>
-        <div id="q4 answer">"."</div>
-
-        <div id="q5 question">What is GitHub?</div>
-        <div id="q5 answer correct">A version control</div>
-        <div id="q5 answer">A food delivery service</div>
-        <div id="q5 answer">A place where coders hang out</div>
-
-        <div id="q6 question">How would you get a new tab to open when a link is clicked using HTML?</div>
-        <div id="q6 answer"><code>console.log(blank)</code></div>
-        <div id="q6 answer correct"><code>target="blank"</code></div>
-        <div id="q6 answer">You don't do anything because HTML has that as default</div>
-
-        <div id="q7 question">What Git command would you use to download the freshest version of a repo?</div>
-        <div id="q7 answer correct">git pull</div>
-        <div id="q7 answer">git clone</div>
-        <div id="q7 answer">git add</div>
-
-        <div id="q8 question">Serif fonts _____.</div>
-        <div id="q8 answer">do not include small lines attached to the end strokes of letters</div>
-        <div id="q8 answer correct">include small lines attached to the end strokes of letters</div>
-        <div id="q8 answer">a common cursive font used by developers</div>
-
-        <div id="q9 question">Given this array of <code>var dogBreed = ["corgi", "pomeranians", "yorkie", "husky"]</code>, how would you print "corgi" to the console?</div>
-        <div id="q9 answer"><code>console.log(dogBreed[1])</code></div>
-        <div id="q9 answer correct"><code>console.log(dogBreed[0])</code></div>
-        <div id="q9 answer"><code>console.log(dogBreed[1,1]</code></div>
-
-        <div id="q10 question">What is the first thing you should do in your index.html file?</div>
-        <div id="q10 answer">Insert your name and date</div>
-        <div id="q10 answer"><code>Link any external style sheets or scripts</div>
-        <div id="q10 answer correct"><code>DOCTYPE declaration</code></div>
-    </div>
-
-    <!--Result-->
-    <div>
-        <h1>Result</h1>
-        <div class="result">You're done! You answered # out of 10 questions right.</div>
-            <div id="result0">You are not a coder.</div>
-            <div id="result3">Not sure, maybe luck was on your side.</div>
-            <div id="result7">Ok, I guess you can code.</div>
-            <div id="result10">You are definitely a coder!</div>
-    </div>
-
+    <script src="script.js"></script> -->
 </body>
 </html>
