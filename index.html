@@ -10,18 +10,20 @@
 </head>
 
 <body>
-    <header>Can You Code?</header>
+    <!--Welcome Message-->
+    <h1>Can You Code?</h1>
 
     <div class="button">
         <button id="enter">Find Out</button>
     </div>
 
+    <!--Instructions-->
     <div class="instructions">
         <div class="instruct-title">Things to Know Before You Start</div>
         <div class="instruct-list">
             <ol>
-                <li>You will have <strong>5 minutes</strong> to complete the quiz</li>
-                <li>The timer will start immediately after you click "Next"</li>
+                <li>You will have <strong>2 minutes</strong> to complete go through <strong>10 questions</strong></li>
+                <li>The timer will start immediately after you click "Start"</li>
                 <li>Once you select an answer, you won't be able to go back and change it</li>
                 <li>You will get <strong>1 point</strong> for each correct answer</li>
                 <li>Your total score will be displayed at the end</li>
@@ -34,12 +36,14 @@
         <button id="exit">Exit</button>
     </div>
 
+    <!--Countdown timer for quiz-->
     <div class="timer">
         <div id="timeLeft">Time Left</div>
-        <div id="minutes">5</div> :
+        <div id="minutes">2</div> :
         <div id="seconds">00</div>
     </div>
 
+    <!--Quiz Questions-->
     <div class="quiz">
         <div id="q1 question">What does HTML stand for?</div>
         <div id="q1 answer correct">Hyper Text Markup Language</div>
@@ -90,6 +94,16 @@
         <div id="q10 answer">Insert your name and date</div>
         <div id="q10 answer"><code>Link any external style sheets or scripts</div>
         <div id="q10 answer correct"><code>DOCTYPE declaration</code></div>
+    </div>
+
+    <!--Result-->
+    <div>
+        <h1>Result</h1>
+        <div class="result">You're done! You answered # out of 10 questions right.</div>
+            <div id="result0">You are not a coder.</div>
+            <div id="result3">Not sure, maybe luck was on your side.</div>
+            <div id="result7">Ok, I guess you can code.</div>
+            <div id="result10">You are definitely a coder!</div>
     </div>
 
 </body>
