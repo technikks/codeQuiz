@@ -1,5 +1,5 @@
 # codeQuiz
-GW Coding Bootcamp Homework #3 due Tuesday, December 1, 2020.
+GW Coding Bootcamp Homework #4 due Tuesday, December 1, 2020.
 
 ## Deployed URL
 (https://technikks.github.io/codeQuiz/)
