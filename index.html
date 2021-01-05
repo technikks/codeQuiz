@@ -3,27 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homework 4: Code Quiz</title>
+    <title>Homework 4: Coding Quiz</title>
 
     <!--Linking CSS file-->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Coding Quiz Challenge</h1>
-        <h2>Instructions</h2>
-        <ol>
-            <li>You will have <strong>10 questions</strong> on JavaScript fundamental to answer.</li><br>
-            <li>You will have <strong>15 seconds</strong> to answer each question.</li><br>
-            <li>Once you submit your answer, you will not be able to change it.</li><br>
-            <li>You'll receive <strong>one point</strong> for each correct answer.</li><br>
-            <li>Your total score will be shown at the end of the quiz.</li>
-        </ol>
-        <h3>Good Luck &#128513;</h3><br> 
-        <button class="btn" id="start-btn">Start Quiz!</button>
+        <main id="home" class="flex-center flex-column">
+            <h1>Coding Quiz Challenge</h1>
+            <h2>Instructions</h2>
+            <ol>
+                <li>You will have <strong>90 seconds</strong> to answer <strong>10 questions</strong> on JavaScript fundamentals.</li><br>
+                <li>Select your answer by clicking on the text.</li><br>
+                <li>Once you select an answer, you will <strong>not</strong> be able to to go back and change it.</li><br>
+                <li>You'll receive <strong>one point</strong> for each correct answer.</li><br>
+                <li>Your total score will be shown at the end of the quiz.</li>
+            </ol>
+            <h3>Good Luck &#128513;</h3><br> 
+            <button id="start">Start Quiz!</button>
+        </main>
+
+        <main id="quiz" style="display: none">
+            <div class="headerItem">
+                <p id="timerText" class="headerPrefix">Time Left</p>
+                <h2 class="timeCount">90 seconds</h2>
+            </div><br>
+            <div class="quizContent">
+                <h2 id="question"></h2>
+                <div id="choices">
+                    <p class="choice" id="A" onclick="checkAnswer('A')"></p>
+                    <p class="choice" id="B" onclick="checkAnswer('B')"></p>
+                    <p class="choice" id="C" onclick="checkAnswer('C')"></p>
+                </div>
+            </div>
+        </main>
+
+        <main id="result" style="display: none">
+            <p>Your Score</p>
+            <h1 id="totalScore">0</h1>
+            <form>
+                <input
+                  type="text"
+                  name="username"
+                  id="username"
+                  placeholder="Enter Your Name"
+                />
+               <br><br> 
+               <button
+                  type="submit"
+                  class="btn"
+                  id="saveScoreBtn"
+                  onclick="saveHighScore(event)"
+                  disabled
+                >
+                  Save Score
+                </button>
+              </form>
+        </main>
     </div>
 
-    <!--Linking JavaScript file-->
+    <!--Linking Javascript file-->
     <script src="script.js"></script>
 </body>
 </html>

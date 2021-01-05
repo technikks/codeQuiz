@@ -19,7 +19,12 @@ h1 {
     color: white; 
 }
 
-.btn {
+.timeCount {
+    text-shadow: 5px 5px 5px  green; 
+    color: white; 
+}
+
+button {
     background: green; 
     text-align: center; 
     border: none;
@@ -29,10 +34,22 @@ h1 {
     transition-duration: 0.5s;
     padding: 10px; 
     font-size: 30px; 
+    color: black; 
 }
 
-.btn:hover {
+button:hover {
     background: green; 
     color: white; 
     cursor: pointer; 
+}
+
+.choice:hover {
+    color: green; 
+}
+
+input {
+    width: 50%; 
+    padding: 10px; 
+    border-radius: 5px; 
+    border: 3px solid green; 
 }

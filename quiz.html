@@ -11,39 +11,35 @@
 <body>
     <div class="container">
         <div id="quiz">
-            <div id="header">
-                <div class="hud-item">
-                    <p id="timerText" class="header-prefix">
-                        Time Left
-                    </p>
-                    <div id="timer">
-                        <div id="time-counter"></div>
-                    </div>
+            <header class="gridContainer">
+                <div class="headerItem">
+                    <p id="timerText" class="headerPrefix">Time Left</p>
+                    <h1 class="timeCount">0</h1>
                 </div>
-                <div class="hud-item">
-                    <p class="header-prefix">
-                        Score
-                    </p>
-                    <h1 class="header-main-text" id="score">
-                        0
-                    </h1>
+                <div class="headerItem">
+                    <p id="scoreText" class="headerPrefix">Score</p>
+                    <h1 id="score">0</h1>
                 </div>
-            </div>
-            <h2 id="question">What is the answer to this question?</h2>
-            <div class="answer-container">
-                <p class="answer" data-number="1">Answer 1</p>
-            </div>
-            <div class="answer-container">
-                <p class="answer" data-number="2">Answer 2</p>
-            </div>
-            <div class="answer-container">
-                <p class="answer" data-number="3">Answer 3</p>
-            </div> 
+            </header>
+            <main>
+                <h2 id="question">Question</h2>
+                <div class="answer-container">
+                    <button class="choice-btn" id="choice1">Choice 1</button>
+                </div>
+                <div class="answer-container">
+                    <button class="choice-btn" id="choice2">Choice 2</button>
+                </div>
+                <div class="answer-container">
+                    <button class="choice-btn" id="choice3">Choice 3</button>
+                </div>
+                <br><br>
+            </main>
+            
             <button class="btn" id="submit-btn">Submit</button>
         </div>
     </div>
 
     <!--Linking JavaScript file-->
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
