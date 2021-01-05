@@ -42,17 +42,21 @@
         <main id="result" style="display: none">
             <p>Your Score</p>
             <h1 id="totalScore">0</h1>
-            <form method="saveHighScore">
-                <div class="input-group">
-                  <input type="text" name="name" id="name" placeholder="Enter Your Name" />
-                </div>
-                <br><br>
-                <div id="saveScore"></div>
-                <button id="submit">Save Score</button>
-              </form>
-
-              <h2>Previous High Score</h2><br>
-              <p><strong>Name</strong> <span id="userName"></span></p>
+            <div class="card">
+                <form method="POST">
+                  <div class="input-group">
+                    <input type="text" name="name" id="name" placeholder="Enter Your Name" />
+                  </div>
+                  <button id="submit">Save Score</button>
+                  <div id="msg"></div>
+                </form>
+            </div>
+        
+            <div class="card">
+                <h2>Previous Score</h2>
+                <p><strong>Name</strong> <span id="userName"></span></p>
+                <p><strong>Score</strong> <span id="userScore"></span></p>
+            </div>
         </main>
     </div>
 

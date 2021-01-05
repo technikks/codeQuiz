@@ -10,10 +10,11 @@ var progress = document.getElementById("progress");
 var result = document.getElementById("result");
 var nameInput = document.querySelector("#name");
 var scoreInput = document.querySelector("#totalScore");
-var saveScoreBtn = document.querySelector("#submit");
-var saveScore = document.querySelector("#saveScore");
-var savedName = document.querySelector("#userName");
-var savedScore = document.querySelector("#totalScore");
+var submitButton = document.querySelector("#submit");
+var msgDiv = document.querySelector("#msg");
+var userName = document.querySelector("#userName");
+var userScore = document.querySelector("#userScore");
+
 
 // Create object for quiz
 var quizContent = [
@@ -153,37 +154,38 @@ function endQuiz(){
 }
 
 // Saving score to local storage 
-saveHighScore();
+saveScore();
 
 function displayMessage(type, message) {
-  saveScore.textContent = message;
-  saveScore.setAttribute("class", type);
-}
+  msgDiv.textContent = message;
+  msgDiv.setAttribute("class", type);
+};
 
-function saveHighScore() {
+function saveScore() {
   var name = localStorage.getItem("name");
-  var highScore = localStorage.getItem("highScore");
-  
-  if (!name || !highScore) {
+  var score = localStorage.getItem("totalScore");
+
+  if (!name) {
     return;
   }
 
-  savedName.textContent = name;
-  savedScore.textContent = highScore; 
-}
+  userName.textContent = name;
+  userScore.textContent = score;
+};
 
-saveScoreBtn.addEventListener("click", function(event) {
+submitButton.addEventListener("click", function(event) {
   event.preventDefault();
 
   var name = document.querySelector("#name").value;
-  var highScore = document.querySelector("#totalScore").value; 
+  var score = document.querySelector("#totalScore").value;
 
   if (name === "") {
-    displayMessage("error", "Name cannot be blank");
-  } else if (highScore === "0") {
-    displayMessage("error", "You can do better!")
-  }
+    displayMessage("error", "Email cannot be blank");
+  } else if (score === "0") {
+    displayMessage("error", "You should try again!");
+  } 
+
     localStorage.setItem("name", name);
-    localStorage.setItem("highScore", score)
-    saveHighScore();
+    localStorage.setItem("score", score);
+    saveScore();
 });
