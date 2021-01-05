@@ -162,25 +162,26 @@ function displayMessage(type, message) {
 };
 
 function saveScore() {
+
   var name = localStorage.getItem("name");
   var score = localStorage.getItem("totalScore");
 
   if (!name) {
-    return;
-  }
+  return;
+ }
 
   userName.textContent = name;
   userScore.textContent = score;
 };
 
 submitButton.addEventListener("click", function(event) {
-  event.preventDefault();
+event.preventDefault();
 
   var name = document.querySelector("#name").value;
   var score = document.querySelector("#totalScore").value;
 
   if (name === "") {
-    displayMessage("error", "Email cannot be blank");
+    displayMessage("error", "Name cannot be blank");
   } else if (score === "0") {
     displayMessage("error", "You should try again!");
   } 
