@@ -42,24 +42,17 @@
         <main id="result" style="display: none">
             <p>Your Score</p>
             <h1 id="totalScore">0</h1>
-            <form>
-                <input
-                  type="text"
-                  name="username"
-                  id="username"
-                  placeholder="Enter Your Name"
-                />
-               <br><br> 
-               <button
-                  type="submit"
-                  class="btn"
-                  id="saveScoreBtn"
-                  onclick="saveHighScore(event)"
-                  disabled
-                >
-                  Save Score
-                </button>
+            <form method="saveHighScore">
+                <div class="input-group">
+                  <input type="text" name="name" id="name" placeholder="Enter Your Name" />
+                </div>
+                <br><br>
+                <div id="saveScore"></div>
+                <button id="submit">Save Score</button>
               </form>
+
+              <h2>Previous High Score</h2><br>
+              <p><strong>Name</strong> <span id="userName"></span></p>
         </main>
     </div>
 

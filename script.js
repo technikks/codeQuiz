@@ -8,10 +8,12 @@ var choiceC = document.getElementById("C");
 var timer = document.querySelector(".timeCount");
 var progress = document.getElementById("progress");
 var result = document.getElementById("result");
-var username = document.getElementById('username');
-var saveScoreBtn = document.getElementById('saveScoreBtn');
-var finalScore = document.getElementById('totalScore');
-var mostRecentScore = localStorage.getItem('mostRecentScore');
+var nameInput = document.querySelector("#name");
+var scoreInput = document.querySelector("#totalScore");
+var saveScoreBtn = document.querySelector("#submit");
+var saveScore = document.querySelector("#saveScore");
+var savedName = document.querySelector("#userName");
+var savedScore = document.querySelector("#totalScore");
 
 // Create object for quiz
 var quizContent = [
@@ -151,27 +153,37 @@ function endQuiz(){
 }
 
 // Saving score to local storage 
-var highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+saveHighScore();
 
-var saveHighScore = 5;
+function displayMessage(type, message) {
+  saveScore.textContent = message;
+  saveScore.setAttribute("class", type);
+}
 
-finalScore.innerText = mostRecentScore;
+function saveHighScore() {
+  var name = localStorage.getItem("name");
+  var highScore = localStorage.getItem("highScore");
+  
+  if (!name || !highScore) {
+    return;
+  }
 
-username.addEventListener('keyup', () => {
-    saveScoreBtn.disabled = !username.value;
+  savedName.textContent = name;
+  savedScore.textContent = highScore; 
+}
+
+saveScoreBtn.addEventListener("click", function(event) {
+  event.preventDefault();
+
+  var name = document.querySelector("#name").value;
+  var highScore = document.querySelector("#totalScore").value; 
+
+  if (name === "") {
+    displayMessage("error", "Name cannot be blank");
+  } else if (highScore === "0") {
+    displayMessage("error", "You can do better!")
+  }
+    localStorage.setItem("name", name);
+    localStorage.setItem("highScore", score)
+    saveHighScore();
 });
-
-saveHighScore = (e) => {
-    e.preventDefault();
-
-    const score = {
-        score: mostRecentScore,
-        name: username.value,
-    };
-    highScores.push(score);
-    highScores.sort((a, b) => b.score - a.score);
-    highScores.splice(5);
-
-    localStorage.setItem('highScores', JSON.stringify(highScores));
-    window.location.assign('/');
-};
