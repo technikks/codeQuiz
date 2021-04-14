@@ -1,5 +1,5 @@
 # codeQuiz
-GW Coding Boot Camp Homework #4
+GW Coding Bootcamp Homework #4
 
 ## Deployed URL
 (https://technikks.github.io/codeQuiz/)
