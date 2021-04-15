@@ -16,5 +16,6 @@ It's likely for any full-stack web developer to be asked to complete a coding as
 * HTML
 * CSS
 * JavaScript
+* Local Storage
 
 
